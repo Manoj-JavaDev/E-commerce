@@ -12,7 +12,7 @@
 <div class="container">
     <h2>Create Your Account</h2>
   
-    <form action="${pageContext.request.contextPath}/register" method="post">
+    <form action="register" method="post">
 
         <label for="fullname">Full Name</label>
         <input type="text" name="name" required />

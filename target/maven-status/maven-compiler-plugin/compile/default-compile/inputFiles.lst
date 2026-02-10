@@ -1,17 +1,17 @@
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\dao\HibernateUtil.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\dao\OrderDAO.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\dao\ProductDAO.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\dao\UserDAO.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\entity\Cart.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\entity\Order.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\entity\OrderItem.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\entity\Product.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\entity\User.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\filters\AuthFilter.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\servlets\CartServlet.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\servlets\CheckoutServlet.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\servlets\LoginServlet.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\servlets\LogoutServlet.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\servlets\OrderConfirmationServlet.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\servlets\ProductServlet.java
-C:\Users\Manoj.M\OneDrive - Techouts Solutions India Private Limited\Desktop\Servlet-WS\Techouts-cart\src\main\java\com\techouts\servlets\RegisterServlet.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\dao\HibernateUtil.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\dao\OrderDAO.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\dao\ProductDAO.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\dao\UserDAO.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\entity\Cart.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\entity\Order.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\entity\OrderItem.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\entity\Product.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\entity\User.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\filters\AuthFilter.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\servlets\CartServlet.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\servlets\CheckoutServlet.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\servlets\LoginServlet.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\servlets\LogoutServlet.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\servlets\OrderConfirmationServlet.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\servlets\ProductServlet.java
+C:\Users\MANOJ\IdeaProjects\E-commerce\src\main\java\com\techouts\servlets\RegisterServlet.java

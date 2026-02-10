@@ -61,7 +61,7 @@ public class RegisterServlet extends HttpServlet {
 
             // Check if email already exists
             if (userDAO.findByEmail(email) != null) {
-                req.setAttribute("error", "Email already registered");
+                req.setAttribute("error", "Email already registered !! Please Register with new Email...");
                 req.getRequestDispatcher("/register.jsp").forward(req, resp);
                 return;
             }

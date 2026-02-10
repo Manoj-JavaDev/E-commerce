@@ -99,7 +99,7 @@ public class ProductDAO {
             Product product = session.get(Product.class, id);
             if (product != null) {
                 product.setActive(false); // Soft delete
-                session.merge(product);
+                session.remove(product);
             }
             transaction.commit();
         } catch (Exception e) {

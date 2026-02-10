@@ -46,8 +46,6 @@ if (errorMsg != null && !errorMsg.isEmpty()) {
 }
 %>
 
-
-
 <%-- <c:if test=${not empty error} >
 <p>${error}
 </p>
