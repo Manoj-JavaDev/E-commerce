@@ -21,7 +21,8 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/login.jsp").forward(req, resp);
+
+        req.getRequestDispatcher("login.jsp").forward(req, resp);
     }
 
     @Override
@@ -61,19 +62,14 @@ public class LoginServlet extends HttpServlet {
                 return;
             }
 
-            // Create session
-            HttpSession session = req.getSession();
+            // Redirect to login with success message
+            HttpSession session = req.getSession(false);
             session.setAttribute("user", user);
             session.setAttribute("userId", user.getId());
             session.setAttribute("userName", user.getName());
             session.setAttribute("userRole", user.getRole().toString());
 
-            // Redirect based on role
-            if (user.getRole() == User.UserRole.ADMIN) {
-                resp.sendRedirect(req.getContextPath() + "/admin/dashboard");
-            } else {
-                resp.sendRedirect(req.getContextPath() + "/products");
-            }
+            req.getRequestDispatcher("products").forward(req, resp);
 
         } catch (Exception e) {
             e.printStackTrace();

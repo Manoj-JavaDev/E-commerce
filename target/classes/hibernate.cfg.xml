@@ -7,7 +7,7 @@
         <property name="hibernate.connection.password">M.manoj@143</property>
 
       
-        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+       <!-- <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>-->
 
       
         <property name="hibernate.show_sql">true</property>
@@ -15,9 +15,9 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="com.techouts.entity.User"/>
-        <mapping class="com.techouts.entity.Product"/>
-        <mapping class="com.techouts.entity.Order"/>
-        <mapping class="com.techouts.entity.OrderItem"/>
+       <mapping class="com.techouts.entity.Product"/>
+        <mapping class="com.techouts.entity.Cart"/>
+        <mapping class="com.techouts.entity.CartProducts"/>
 
     </session-factory>
 </hibernate-configuration>

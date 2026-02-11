@@ -23,7 +23,9 @@ public class Product {
     
     @Column(nullable = false)
     private Integer stock = 0;
-    
+
+
+
     @Column(length = 100)
     private String category;
     
@@ -38,6 +40,8 @@ public class Product {
     
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+
     
     @PrePersist
     protected void onCreate() {

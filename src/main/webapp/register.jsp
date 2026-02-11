@@ -1,4 +1,4 @@
-
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,23 +37,13 @@
     <div class="footer-link">
         Already have an account? <a href="login.jsp">Login here</a>
     </div>
-    <%
-String errorMsg = (String) request.getAttribute("error");
-if (errorMsg != null && !errorMsg.isEmpty()) {
-%>
-    <p style="color:red;"><%= errorMsg %></p>
-<%
-}
-%>
 
-<%-- <c:if test=${not empty error} >
-<p>${error}
+<c:if test="${not empty error}" >
+<p style="color : red ; font-size : 15px">${error}
 </p>
-</c:if> --%>
+</c:if>
 
 </div>
-
-
 
 </body>
 </html>

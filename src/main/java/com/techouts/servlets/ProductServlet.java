@@ -17,6 +17,14 @@ public class ProductServlet extends HttpServlet {
 
     private final ProductDAO productDAO = new ProductDAO();
 
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
+        doGet(req, resp);
+
+    }
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -28,18 +36,22 @@ public class ProductServlet extends HttpServlet {
 
         if (search != null && !search.trim().isEmpty()) {
             products = productDAO.searchByName(search.trim());
-            req.setAttribute("searchQuery", search);
-        } else if (category != null && !category.trim().isEmpty()) {
+            // req.setAttribute("searchQuery", search);
+        }
+        else if (category != null && !category.trim().isEmpty()) {
             products = productDAO.findByCategory(category);
-            req.setAttribute("selectedCategory", category);
-        } else {
+            //req.setAttribute("selectedCategory", category);
+
+        }
+        else {
             products = productDAO.findAll();
         }
 
         List<String> categories = productDAO.getAllCategories();
-
+        //resp.setContentType("text/html;charset=UTF-8");
+        //System.out.println("Number of Products are : " + products.size());
         req.setAttribute("products", products);
         req.setAttribute("categories", categories);
-        req.getRequestDispatcher("/products.jsp").forward(req, resp);
+        req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }

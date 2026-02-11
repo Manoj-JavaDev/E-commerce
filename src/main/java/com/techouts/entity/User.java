@@ -10,6 +10,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn (name="cart_Id")
+    private Cart cart;
     
     @Column(nullable = false, length = 100)
     private String name;

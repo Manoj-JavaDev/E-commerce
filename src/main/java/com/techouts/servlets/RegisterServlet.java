@@ -3,12 +3,14 @@ package com.techouts.servlets;
 import java.io.IOException;
 
 import com.techouts.dao.UserDAO;
+import com.techouts.entity.Cart;
 import com.techouts.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
@@ -18,14 +20,12 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/register.jsp").forward(req, resp);
+        req.getRequestDispatcher("register.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-    	
-    	//resp.getWriter().println("<h1> This is Register Servlet </h1>");
 
         try {
             String name = req.getParameter("name");
@@ -75,12 +75,23 @@ public class RegisterServlet extends HttpServlet {
             user.setAddress(address);
             user.setRole(User.UserRole.CUSTOMER);
 
+            req.setAttribute("user", user);
+            Cart cart = new Cart();
+            user.setCart(cart);
+
             userDAO.save(user);
 
-            // Redirect to login with success message
-            resp.sendRedirect(req.getContextPath() + "/login?registered=true");
+            HttpSession session = req.getSession(false);
+            session.setAttribute("user", user);
+            session.setAttribute("userId", user.getId());
+            session.setAttribute("userName", user.getName());
+            session.setAttribute("userRole", user.getRole().toString());
+            req.setAttribute("registered", true);
 
-        } catch (Exception e) {
+            req.getRequestDispatcher("/products").forward(req, resp);
+
+        }
+        catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("error", "An error occurred during registration. Please try again.");
             req.getRequestDispatcher("/register.jsp").forward(req, resp);

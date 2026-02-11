@@ -12,7 +12,8 @@ public class AddProducts {
 
         ProductDAO productDAO = new ProductDAO();
 
-        try(Session session = HibernateUtil.getSession()) {
+
+            Session session = HibernateUtil.getSession();
             Transaction tx = session.beginTransaction();
 
             Product product = new Product("IPhone 16 Pro Max","12G BRAM - 128 ROM", BigDecimal.valueOf(8090.90),6);
@@ -24,7 +25,12 @@ public class AddProducts {
             session.persist(product1);
 
             tx.commit();
-        }
+
+            session.close();
+
+
+
+
 
     }
 
