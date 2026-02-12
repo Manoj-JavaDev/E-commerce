@@ -69,6 +69,26 @@ public class CartDAO {
 
     }
 
+    public void deleteCartAfterPlacingOrder(Cart cart) {
+
+        if (cart != null) {
+
+            String hql = "delete from CartProducts cp where cp.cart.id = :cartId";
+
+            try (Session session = HibernateUtil.getSession()) {
+
+                Transaction transaction = session.beginTransaction();
+
+                session.createQuery(hql)
+                        .setParameter("cartId", cart.getId())
+                        .executeUpdate();
+
+                transaction.commit();
+            }
+        }
+    }
+
+
     public void deleteCartProductByProductId(Cart cart, Product product) {
         String query = "from CartProducts cp where cp.product.id = :productId AND cp.cart.id = :cartId";
         try (Session session = HibernateUtil.getSession()) {

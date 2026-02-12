@@ -3,6 +3,8 @@ package com.techouts.entity;
 import jakarta.persistence.*;
 import jakarta.persistence.criteria.Order;
 
+import java.math.BigDecimal;
+
 @Entity
 public class ProductDetails {
 
@@ -34,19 +36,19 @@ public class ProductDetails {
         this.quantity = quantity;
     }
 
-    public int getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public long getTotalPrice() {
+    public BigDecimal getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(long totalPrice) {
+    public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
 
@@ -57,8 +59,8 @@ public class ProductDetails {
         this.order = order;
     }
 
-    private int price;
-    private long totalPrice;
+    private BigDecimal price;
+    private BigDecimal totalPrice;
 
     @ManyToOne
     @JoinColumn (name="order_id")

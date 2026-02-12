@@ -4,6 +4,8 @@ import com.techouts.entity.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrdersDAO {
@@ -23,7 +25,7 @@ public class OrdersDAO {
                     order.setEmail(user.getEmail());
                     order.setPhoneNumber(user.getPhone());
 
-                    List<ProductDetails> productDetailsList = null;
+                    List<ProductDetails> productDetailsList = new ArrayList<>();
 
                     for(CartProducts cartProduct:orderCartProducts)
                     {
@@ -31,7 +33,7 @@ public class OrdersDAO {
                         pd.setName(cartProduct.getProduct().getName());
                         pd.setPrice(cartProduct.getProduct().getPrice());
                         pd.setQuantity(cartProduct.getQuantity());
-                        pd.setTotalPrice((long) cartProduct.getProduct().getPrice() *cartProduct.getQuantity());
+                        pd.setTotalPrice(cartProduct.getProduct().getPrice().multiply(BigDecimal.valueOf(cartProduct.getQuantity())));
                         session.persist(pd);
                         productDetailsList.add(pd);
                     }

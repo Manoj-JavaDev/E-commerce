@@ -9,7 +9,7 @@ import com.techouts.entity.User;
 
 public class HibernateUtil {
 
-	public static SessionFactory sf = new Configuration().addAnnotatedClass(User.class).addAnnotatedClass(Product.class)
+	public static SessionFactory sf = new Configuration()
 		.configure("hibernate.cfg.xml").buildSessionFactory();
 
 	public static Session getSession() {

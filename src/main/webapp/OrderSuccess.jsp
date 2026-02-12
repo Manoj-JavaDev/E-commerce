@@ -48,7 +48,7 @@
 <div class="success-card">
     <h1>✅ Order Placed Successfully!</h1>
     <p>Thank you for your purchase. Your order has been received and is being processed.</p>
-    <a href="/products">Continue Shopping</a>
+    <a href="products">Continue Shopping</a>
 </div>
 
 </body>

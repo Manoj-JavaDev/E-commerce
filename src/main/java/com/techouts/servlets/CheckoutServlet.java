@@ -33,7 +33,7 @@ public class CheckoutServlet extends HttpServlet {
         for (CartProducts cartProduct : cartProducts) {
 
             BigDecimal itemTotal =
-                    BigDecimal.valueOf(cartProduct.getProduct()
+                    (cartProduct.getProduct()
                             .getPrice());
 
             total = total.add(itemTotal);
