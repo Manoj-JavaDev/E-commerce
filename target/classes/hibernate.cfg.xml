@@ -12,12 +12,14 @@
       
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="com.techouts.entity.User"/>
        <mapping class="com.techouts.entity.Product"/>
         <mapping class="com.techouts.entity.Cart"/>
         <mapping class="com.techouts.entity.CartProducts"/>
+        <mapping class="com.techouts.entity.ProductDetails"/>
+        <mapping class="com.techouts.entity.Orders"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -21,28 +21,17 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="index.jsp">Home</a>
+        <a href="login">Home</a>
         <div class="dropdown">
-            <a href="#">Categories</a>
+             <span>Categories</span>
             <div class="dropdown-content">
                 <a href="products?category=Mobiles">Mobiles</a>
-                <a href="#">Clothing</a>
-                <a href="#">Books</a>
-                <a href="#">Accessories</a>
+                <a href="products?category=Footwear">Foot Wear</a>
+                <a href="products?category=Books">Books</a>
+                <a href="products?category=Accessory">Accessories</a>
             </div>
         </div>
     </nav>
-
-    <!-- Right Section -->
-    <div class="right-section">
-
-        <!-- Cart -->
-        <div class="cart">
-
-            <span class="cart-count">
-                ${sessionScope.cartCount != null ? sessionScope.cartCount : 0}
-            </span>
-        </div>
 
         <!-- Login / Logout Logic -->
         <c:choose>
@@ -63,6 +52,12 @@
                 <a href="logout">
                     <button class="btn logout-btn">Logout</button>
                 </a>
+                <!-- CART -->
+                <div class="right-section">
+                  <a href="displayCart">
+                    <button class="btn logout-btn">Cart</button>
+                  </a>
+                </div>
             </c:otherwise>
 
         </c:choose>

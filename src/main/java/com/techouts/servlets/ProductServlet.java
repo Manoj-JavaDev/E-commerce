@@ -19,9 +19,7 @@ public class ProductServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
         doGet(req, resp);
-
     }
 
 
@@ -36,7 +34,6 @@ public class ProductServlet extends HttpServlet {
 
         if (search != null && !search.trim().isEmpty()) {
             products = productDAO.searchByName(search.trim());
-            // req.setAttribute("searchQuery", search);
         }
         else if (category != null && !category.trim().isEmpty()) {
             products = productDAO.findByCategory(category);

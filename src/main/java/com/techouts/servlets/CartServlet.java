@@ -15,6 +15,22 @@ import java.io.IOException;
 import java.io.PrintWriter;
 @WebServlet("/addToCart")
 public class CartServlet extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        User user = (User) request.getSession().getAttribute("user");
+
+        CartDAO cartDAO = new CartDAO();
+        ProductDAO productDAO = new ProductDAO();
+        long productId = Long.parseLong(request.getParameter("productId"));
+        Cart cart = user.getCart();
+        Product product = productDAO.findById(productId);
+
+        cartDAO.addItemToCart(cart, product);
+
+        request.getRequestDispatcher("displayCart").forward(request,response);
+
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

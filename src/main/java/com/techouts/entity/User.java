@@ -67,6 +67,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
     
     // Getters and Setters
     public Long getId() {
