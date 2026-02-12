@@ -2,16 +2,19 @@ package com.techouts.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
+
 @Entity
+@Table(
+        uniqueConstraints = @UniqueConstraint(columnNames = {"cart_id", "product_id"})
+)
 public class CartProducts {
+    public Long getId() {
+        return id;
+    }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @OneToOne
-    private User user;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Cart getCart() {
         return cart;
@@ -29,25 +32,15 @@ public class CartProducts {
         this.product = product;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne
-    @JoinColumn (name="Cart_id")
+    @JoinColumn(name = "cart_id")
     private Cart cart;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
 }

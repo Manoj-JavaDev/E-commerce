@@ -21,6 +21,10 @@
             <button type="submit">Login</button>
 
         </form>
+        <div class="footer-link">
+                 No account? <a href="register.jsp">Register</a>
+            </div>
+
         <%
     String errorMsg = (String) request.getAttribute("error");
     if (errorMsg != null && !errorMsg.isEmpty()) {

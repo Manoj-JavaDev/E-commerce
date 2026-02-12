@@ -38,7 +38,7 @@
 
         <!-- Cart -->
         <div class="cart">
-            🛒
+
             <span class="cart-count">
                 ${sessionScope.cartCount != null ? sessionScope.cartCount : 0}
             </span>
@@ -86,10 +86,10 @@
                 <p>${item.description}</p>
                 <p><b>${item.price}</b></p>
                 <button>
-                <a href="/addToCart?product=${item.id}">
-                Add to Cart
-                </button>
-                </a>
+               <form action="${pageContext.request.contextPath}/addToCart" method="post">
+                   <input type="hidden" name="product" value="${item.id}" />
+                   <button type="submit">Add to Cart</button>
+               </form>
             </div>
         </c:forEach>
     </div>

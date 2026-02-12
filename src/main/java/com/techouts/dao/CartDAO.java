@@ -6,37 +6,34 @@ import com.techouts.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.util.Set;
 
 public class CartDAO {
 
     public void addItemToCart(Cart cart, Product product) {
 
-        if(cart != null && product != null) {
+        if (cart != null && product != null) {
 
             try (Session session = HibernateUtil.getSession()) {
                 Transaction transaction = session.beginTransaction();
+
+                // Reattach cart and product (VERY IMPORTANT)
+                Cart managedCart = session.get(Cart.class, cart.getId());
+                Product managedProduct = session.get(Product.class, product.getId());
+
                 CartProducts cartProducts = new CartProducts();
-                cartProducts.setCart(cart);
-                cartProducts.setProduct(product);
-                cartProducts.setUser(cart.getUser());
+                cartProducts.setCart(managedCart);
+                cartProducts.setProduct(managedProduct);
+
+
                 session.persist(cartProducts);
-                cart.getCartProducts().add(cartProducts);
-                session.persist(cart);
+
                 transaction.commit();
             }
-
-        }
-
-    }
-
-    public void removeItemFromCart(Cart cart, Product product) {
-        if(cart != null && product != null) {
-
-
-
         }
     }
+
+
+
 
 
 

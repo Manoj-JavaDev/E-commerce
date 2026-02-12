@@ -13,35 +13,32 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+@WebServlet("/addToCart")
+public class CartServlet extends HttpServlet {
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-@WebServlet ("/addToCart")
-public class CartServlet extends HttpServlet
-{
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
-        doPost(request, response);
-    }
+        User user = (User) request.getSession().getAttribute("user");
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
-
-        User user = (User)request.getSession().getAttribute("user");
-
-        if(user == null)
-        {
+        if (user == null) {
             response.sendRedirect(request.getContextPath() + "/login.jsp");
-        }
-        else {
-            long productId = (Integer) request.getSession().getAttribute("product");
-            CartDAO cartDAO = new CartDAO();
-            Cart cart = user.getCart();
-            ProductDAO productDAO = new ProductDAO();
-            Product product = productDAO.findById(productId);
-            cartDAO.addItemToCart(cart,product);
-            System.out.println("Successfully added product to cart");
+            return;
         }
 
-        request.getRequestDispatcher("/products").forward(request, response);
+        long productId = Long.parseLong(request.getParameter("product"));
 
+        CartDAO cartDAO = new CartDAO();
+        ProductDAO productDAO = new ProductDAO();
+
+        Cart cart = user.getCart();
+        Product product = productDAO.findById(productId);
+
+        cartDAO.addItemToCart(cart, product);
+
+        System.out.println("Successfully added product to cart");
+
+        response.sendRedirect(request.getContextPath() + "/products");
     }
 }
+
