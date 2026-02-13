@@ -2,11 +2,13 @@ package com.techouts.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
 public class User {
-    
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -61,12 +63,23 @@ public class User {
     
     // Constructors
     public User() {}
-    
+
+    public List<Orders> getUserOrders() {
+        return userOrders;
+    }
+
+    public void setUserOrders(List<Orders> userOrders) {
+        this.userOrders = userOrders;
+    }
+
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
     }
+
+    @OneToMany (mappedBy = "user")
+    List<Orders> userOrders;
 
     
     // Getters and Setters

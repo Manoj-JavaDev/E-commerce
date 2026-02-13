@@ -30,6 +30,7 @@ public class OrdersDAO {
                     for(CartProducts cartProduct:orderCartProducts)
                     {
                         ProductDetails pd = new ProductDetails();
+                        pd.setOrder(order);
                         pd.setName(cartProduct.getProduct().getName());
                         pd.setPrice(cartProduct.getProduct().getPrice());
                         pd.setQuantity(cartProduct.getQuantity());
